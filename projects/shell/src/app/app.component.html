@@ -1,0 +1,23 @@
+<ul>
+    <li><img src="../assets/angular.png" width="50"></li>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/flights/flights-search">Temas</a></li>
+    <li>
+        <div style="
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        cursor: pointer;
+        ">
+            Selecione o idioma : <select #selLang (change)="translateLanguageTo(selLang.value)">
+                <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+            </select>
+        </div>
+
+    </li>
+
+</ul>
+
+<router-outlet></router-outlet>
