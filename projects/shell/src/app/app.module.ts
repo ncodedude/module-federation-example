@@ -12,7 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-//Send to Libs
+//Mover para Libs e colocar o caminho do assets nas variáveis de ambiente
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
     http,
