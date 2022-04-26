@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { IgxGridModule, IgxSwitchModule } from 'igniteui-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Mover para Libs e colocar o caminho do assets nas variáveis de ambiente
 export function httpTranslateLoaderFactory(http: HttpClient) {
@@ -35,8 +37,10 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     AuthLibModule,
     EventBusModule,
     // SharedLibModule,
-
     FormsModule,
+    BrowserAnimationsModule,
+    IgxGridModule,
+    IgxSwitchModule,
     RouterModule.forRoot(APP_ROUTES),
   ],
   declarations: [AppComponent, HomeComponent, NotFoundComponent],

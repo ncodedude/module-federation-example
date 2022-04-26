@@ -44,6 +44,7 @@ module.exports = {
         "@ngx-translate/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
         "@ngx-translate/http-loader": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
         "ng-event-bus": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
+        "igniteui-angular": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
 
         // Uncomment for sharing lib of an Angular CLI or Nx workspace
         ...sharedMappings.getDescriptors()

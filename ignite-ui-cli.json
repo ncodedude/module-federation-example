@@ -1,0 +1,19 @@
+{
+  "version": "9.1.1",
+  "project": {
+    "defaultPort": 5004,
+    "framework": "angular",
+    "projectType": "igx-ts",
+    "projectTemplate": "ng-cli",
+    "theme": "Custom",
+    "isBundle": false,
+    "bundleFilePath": "",
+    "igniteuiSource": "",
+    "components": [],
+    "sourceFiles": [],
+    "isShowcase": false,
+    "version": ""
+  },
+  "build": {},
+  "packagesInstalled": true
+}

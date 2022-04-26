@@ -16,6 +16,22 @@
             </select>
         </div>
 
+
+
+    </li>
+    <li>
+        <div style="
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        cursor: pointer;
+        ">
+            Selecione o tema : <select #selTheme (change)="changeThema(selTheme.value)">
+                <option *ngFor="let thema of themas" [value]="thema">{{ thema }}</option>
+            </select>
+        </div>
     </li>
 
 </ul>

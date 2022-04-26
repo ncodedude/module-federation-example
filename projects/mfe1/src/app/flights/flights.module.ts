@@ -10,6 +10,8 @@ import { EventBusModule } from 'event-bus';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { IgxGridModule, IgxSwitchModule } from 'igniteui-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Mover para Libs e colocar o caminho do assets nas variáveis de ambiente
 export function httpTranslateLoaderFactory(http: HttpClient) {
@@ -33,6 +35,9 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    BrowserAnimationsModule,
+    IgxGridModule,
+    IgxSwitchModule,
     RouterModule.forChild(FLIGHTS_ROUTES),
   ],
   declarations: [FlightsSearchComponent],

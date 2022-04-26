@@ -35,8 +35,41 @@
 
 <div id="container">
     <h1>{{'WELCOME' | translate}}!</h1>
+    <h1>{{'TITLE' | translate}}!</h1>
     <button (click)="getEvent()">Obter Tema</button>
     <div>
         {{tema}}
+    </div>
+</div>
+
+
+<div style="margin-top: 150px;">
+    <div class="sample-content">
+        <div class="sample-column">
+            <div class="grid-wrapper">
+                <igx-grid igxPreventDocumentScroll #grid [data]="data" primaryKey="ProductID" rowEditable="true"
+                    (columnInit)="initColumn($event)" [clipboardOptions]="options" [autoGenerate]="true">
+                    <igx-grid-toolbar>
+                        <div class="tlb">
+                            <igx-switch [(ngModel)]="options.enabled">Grid copy behavior</igx-switch>
+                            <igx-switch [(ngModel)]="options.copyHeaders">Copying of header labels</igx-switch>
+                            <igx-switch [(ngModel)]="options.copyFormatters">Copying column formatters</igx-switch>
+                            <button igxButton="outlined" igxRippleCentered="true" (click)="grid.clearCellSelection()">
+                                <igx-icon family="material">clear</igx-icon>
+                                <span>Selection</span>
+                            </button>
+                        </div>
+
+                    </igx-grid-toolbar>
+                </igx-grid>
+            </div>
+
+            <div style="margin-top: 0.5rem">
+                <igx-input-group type="box">
+                    <label igxLabel>Paste your data here (or in Excel)</label>
+                    <textarea igxInput cols="30" rows="5"></textarea>
+                </igx-input-group>
+            </div>
+        </div>
     </div>
 </div>

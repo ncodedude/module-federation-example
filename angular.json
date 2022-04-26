@@ -27,9 +27,26 @@
 							"projects/shell/src/assets"
 						],
 						"styles": [
-							"projects/shell/src/styles.css"
+							"node_modules/minireset.css/minireset.css",
+							"projects/shell/src/styles.css",
+							"node_modules/igniteui-angular/styles/igniteui-angular.css",
+							{
+								"input": "node_modules/igniteui-angular/styles/igniteui-angular-dark.css",
+								"bundleName": "dark",
+								"inject": false
+							},
+							{
+								"input": "node_modules/igniteui-angular/styles/igniteui-angular.css",
+								"bundleName": "light",
+								"inject": false
+							},
+							{
+								"input": "node_modules/igniteui-angular/styles/igniteui-dark-green.css",
+								"bundleName": "dark-green",
+								"inject": false
+							}
 						],
-						"scripts": [],
+						"scripts": [ "./node_modules/hammerjs/hammer.min.js"],
 						"extraWebpackConfig": "projects/shell/webpack.config.js",
 						"commonChunk": false
 					},
@@ -104,9 +121,10 @@
 							"projects/shell/src/assets"
 						],
 						"styles": [
-							"projects/shell/src/styles.css"
+							"projects/shell/src/styles.css",
+							"node_modules/igniteui-angular/styles/igniteui-angular-dark.css"
 						],
-						"scripts": []
+						"scripts": [ "./node_modules/hammerjs/hammer.min.js"]
 					}
 				}
 			}

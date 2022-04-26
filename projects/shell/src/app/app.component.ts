@@ -11,6 +11,7 @@ import { AuthLibService } from 'auth-lib';
 import { HttpClient } from '@angular/common/http';
 import { EventBus } from 'event-bus';
 import { TranslateService } from '@ngx-translate/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -19,14 +20,18 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'shell';
 
+  themas = ['light', 'dark', 'dark-green'];
+
   constructor(
     private service: AuthLibService,
     http: HttpClient,
     private eventBus: EventBus,
-    public translate: TranslateService
+    public translate: TranslateService,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.eventBus.on('GET_TEST').subscribe(() => {
-      this.eventBus.emit('SEND_TEST', { result: 'Dark' });
+      debugger;
+      this.eventBus.emit('SEND_TEST', { result: 'Light' });
     });
 
     this.eventBus.on('SET_LOCATION').subscribe((data: any) => {
@@ -43,5 +48,23 @@ export class AppComponent {
     this.translate.use(lang);
 
     this.eventBus.emit('SET_LOCATION', lang);
+  }
+
+  changeThema(styleName: string) {
+    const head = this.document.getElementsByTagName('head')[0];
+
+    let themeLink = this.document.getElementById(
+      'client-theme'
+    ) as HTMLLinkElement;
+    if (themeLink) {
+      themeLink.href = styleName + '.css';
+    } else {
+      const style = this.document.createElement('link');
+      style.id = 'client-theme';
+      style.rel = 'stylesheet';
+      style.href = `${styleName}.css`;
+
+      head.appendChild(style);
+    }
   }
 }
